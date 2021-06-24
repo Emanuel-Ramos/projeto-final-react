@@ -46,7 +46,7 @@ const EditarProduto = () => {
             preco: preco,
             categoria_id: categoriaProduto.key
         }
-        http.put('produto/' + produtoEditado.codigo, produtoEditado).then(console.log("Produto editado")).catch(erro => console.log(erro))
+        http.put('produto/' + id, produtoEditado).then(console.log("Produto editado")).catch(erro => console.log(erro))
     }
 
     useEffect(() => {

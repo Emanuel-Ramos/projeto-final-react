@@ -1,8 +1,14 @@
-
+import http from "../../http";
 import { Link } from "react-router-dom";
 import './styles.css'
 
 const ListaProdutos = (props) => {
+    const excluirProduto = (codigo) => {
+        let produtoApagar = {
+            codigo: codigo
+        }
+        http.delete(`produto`, produtoApagar).then(console.log("Produto deletado")).catch(erro => console.log(erro))
+    }
     if (props.show) {
         return (
             <div>
@@ -13,7 +19,7 @@ const ListaProdutos = (props) => {
                     <Link to={`editarProduto/${item.id}`}>
                         <button>Editar</button>
                     </Link>
-                    <button>Excluir</button>
+                    <button onClick={excluirProduto(item.codigo)}>Excluir</button>
                 </ul>)
                 }
                 <button onClick={props.hide}>
