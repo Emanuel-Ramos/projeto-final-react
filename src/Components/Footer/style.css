@@ -1,0 +1,28 @@
+footer {
+    height: 50px;
+    color: whitesmoke;
+}
+
+nav {
+
+    min-width: 400px;
+    width: calc(65% + 200px);
+    max-width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+dl {
+    display: flex;
+    width: 450px;
+
+    list-style: none;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
