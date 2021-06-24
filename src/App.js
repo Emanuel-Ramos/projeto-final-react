@@ -12,6 +12,7 @@ import Cart from './Paginas/Cart';
 import NotFound from './Paginas/NotFound';
 import NavBar from './Components/NavBar';
 import Produto from './Paginas/Produto';
+import CadastroProduto from './Paginas/CadastroProdutos';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/profile" component={Profile} />
         <Route path="/produtos" component={Produtos} />
         <Route path="/produto/:id" component={Produto} />
+        <Route path="/cadastroProduto" component={CadastroProduto} />
         <Route path="/pedidos/:id" component={PedidosUser} />
         <Route path="/pedidos" component={PedidosAll} />
         <Route path="/cart" component={Cart} />

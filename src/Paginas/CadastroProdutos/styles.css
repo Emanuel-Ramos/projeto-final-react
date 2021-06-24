@@ -1,0 +1,15 @@
+.cadastro-area {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form-categoria {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: white;
+}

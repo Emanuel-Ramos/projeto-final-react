@@ -16,11 +16,11 @@ const Profile = () => {
 
 
 
-            {/* <Link to={`pedidos/${id}`}> */}
-            <button>
-                Pedidos
-            </button>
-            {/* </Link> */}
+            <Link to={`cadastroProduto`}>
+                <button>
+                    Cadastrar Produtos
+                </button>
+            </Link>
         </div>
     )
 }

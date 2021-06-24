@@ -2,7 +2,9 @@
 
 const PedidosUser = () => {
     return (
-        <div></div>
+        <div>
+
+        </div>
     )
 }
 
