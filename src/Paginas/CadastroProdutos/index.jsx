@@ -4,12 +4,12 @@ import http from "../../http"
 import React, { Component } from 'react'
 import Select from 'react-select'
 import { Link } from "react-router-dom"
+import ListaProdutos from "../../Components/ListaProdutos"
 
 const CadastroProduto = () => {
     const [codigoProduto, setCodigoProduto] = useState('')
     const [descricaoProduto, setDescricaoProduto] = useState('')
     const [quantidadeEstoque, setEstoque] = useState('')
-    const [imagem, setImagem] = useState('')
     const [nomeProduto, setNomeProduto] = useState('')
     const [preco, setPreco] = useState('')
     const [categoriaProduto, setCategoriaProduto] = useState({})
@@ -19,6 +19,7 @@ const CadastroProduto = () => {
     const [codigoCategoria, setCodigoCategoria] = useState('')
     const [descricaoCategoria, setDescricaoCategoria] = useState('')
     const [showListaProdutos, setShowListaProdutos] = useState(false)
+    const [produtos, setProdutos] = useState([])
     const options = categorias.map((item) => {
         return {
             key: item.id,
@@ -29,6 +30,7 @@ const CadastroProduto = () => {
 
     useEffect(() => {
         http.get('categoria').then(response => setCategorias(response.data))
+        http.get('produto').then((response) => { setProdutos(response.data) }).catch(erro => console.log(erro))
     }, [])
 
     const cadastrarProduto = (e) => {
@@ -68,7 +70,12 @@ const CadastroProduto = () => {
 
     const mostrarProdutos = () => {
         setShowListaProdutos(true)
-        console.log(showListaProdutos)
+
+    }
+
+    const ocultarProdutos = () => {
+        setShowListaProdutos(false)
+
     }
 
     return (
@@ -131,8 +138,9 @@ const CadastroProduto = () => {
                     <button type="submit">Cadastrar Produto</button>
                 </form>
                 <button onClick={mostrarProdutos}>
-                    Listar todos os produtos
+                    Mostrar produtos
                 </button>
+                <ListaProdutos produtos={produtos} show={showListaProdutos} hide={ocultarProdutos} />
             </div>
         </div>
     )

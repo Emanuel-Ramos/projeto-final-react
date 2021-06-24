@@ -1,0 +1,10 @@
+.edit-area {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-edit {
+  color: aliceblue;
+}

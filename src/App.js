@@ -13,6 +13,7 @@ import NotFound from './Paginas/NotFound';
 import NavBar from './Components/NavBar';
 import Produto from './Paginas/Produto';
 import CadastroProduto from './Paginas/CadastroProdutos';
+import EditarProduto from './Paginas/EditarProduto';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/produtos" component={Produtos} />
         <Route path="/produto/:id" component={Produto} />
         <Route path="/cadastroProduto" component={CadastroProduto} />
+        <Route path="/editarProduto/:id" component={EditarProduto} />
         <Route path="/pedidos/:id" component={PedidosUser} />
         <Route path="/pedidos" component={PedidosAll} />
         <Route path="/cart" component={Cart} />
