@@ -3,20 +3,22 @@ import './styles.css'
 import http from "../../http"
 import React, { Component } from 'react'
 import Select from 'react-select'
+import { Link } from "react-router-dom"
 
 const CadastroProduto = () => {
     const [codigoProduto, setCodigoProduto] = useState('')
     const [descricaoProduto, setDescricaoProduto] = useState('')
-    const [estoque, setEstoque] = useState('')
+    const [quantidadeEstoque, setEstoque] = useState('')
     const [imagem, setImagem] = useState('')
     const [nomeProduto, setNomeProduto] = useState('')
     const [preco, setPreco] = useState('')
     const [categoriaProduto, setCategoriaProduto] = useState({})
-
+    const [arquivo, setArquivo] = useState('')
     const [categorias, setCategorias] = useState([])
     const [nomeCategoria, setNomeCategoria] = useState('')
     const [codigoCategoria, setCodigoCategoria] = useState('')
     const [descricaoCategoria, setDescricaoCategoria] = useState('')
+    const [showListaProdutos, setShowListaProdutos] = useState(false)
     const options = categorias.map((item) => {
         return {
             key: item.id,
@@ -34,12 +36,13 @@ const CadastroProduto = () => {
         let newProduto = {
             codigo: codigoProduto,
             descricao: descricaoProduto,
-            estoque: estoque,
-            imagem: imagem,
+            estoque: quantidadeEstoque,
+            imagem: arquivo,
             nome: nomeProduto,
             preco: preco,
             categoria_id: categoriaProduto.key
         }
+        console.log(newProduto)
         http.post('produto', newProduto).then(console.log("Produto cadastrado")).catch(erro => console.log(erro))
     }
 
@@ -50,6 +53,22 @@ const CadastroProduto = () => {
             descricao: descricaoCategoria
         }
         http.post('categoria', newCategoria).then(console.log("Categoria cadastrada")).catch(erro => console.log(erro))
+    }
+
+    const reader = new FileReader();
+
+    const manipuladorArquivo = (evento) => {
+        const arquivos = evento.target.files;
+        const arquivo = arquivos[0];
+        reader.readAsDataURL(arquivo);
+        reader.onload = () => {
+            setArquivo(reader.result);
+        };
+    }
+
+    const mostrarProdutos = () => {
+        setShowListaProdutos(true)
+        console.log(showListaProdutos)
     }
 
     return (
@@ -84,11 +103,11 @@ const CadastroProduto = () => {
                     </label>
                     <label>
                         Estoque
-                        <input type="text" value={estoque} onChange={(e) => setEstoque(e.target.value)} />
+                        <input type="number" min="0" max="255" step="1" value={quantidadeEstoque} onChange={(e) => setEstoque(Number(e.target.value))} />
                     </label>
                     <label>
                         Imagem
-                        <input type="text" value={imagem} onChange={(e) => setImagem(e.target.value)} />
+                        <input type="file" onChange={manipuladorArquivo} className="form-control-file" />
                     </label>
                     <label>
                         Nome
@@ -111,6 +130,9 @@ const CadastroProduto = () => {
                     </label>
                     <button type="submit">Cadastrar Produto</button>
                 </form>
+                <button onClick={mostrarProdutos}>
+                    Listar todos os produtos
+                </button>
             </div>
         </div>
     )
