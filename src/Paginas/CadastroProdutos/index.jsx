@@ -5,6 +5,8 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import { Link } from "react-router-dom"
 import ListaProdutos from "../../Components/ListaProdutos"
+import { useLocation } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 const CadastroProduto = () => {
     const [codigoProduto, setCodigoProduto] = useState('')
@@ -20,6 +22,7 @@ const CadastroProduto = () => {
     const [descricaoCategoria, setDescricaoCategoria] = useState('')
     const [showListaProdutos, setShowListaProdutos] = useState(false)
     const [produtos, setProdutos] = useState([])
+    const location = useLocation();
     const options = categorias.map((item) => {
         return {
             key: item.id,
@@ -29,9 +32,10 @@ const CadastroProduto = () => {
     })
 
     useEffect(() => {
+
         http.get('categoria').then(response => setCategorias(response.data))
         http.get('produto').then((response) => { setProdutos(response.data) }).catch(erro => console.log(erro))
-    }, [])
+    }, [location])
 
     const cadastrarProduto = (e) => {
         e.preventDefault()
@@ -44,8 +48,8 @@ const CadastroProduto = () => {
             preco: preco,
             categoria_id: categoriaProduto.key
         }
-        console.log(newProduto)
         http.post('produto', newProduto).then(console.log("Produto cadastrado")).catch(erro => console.log(erro))
+        window.location.reload();
     }
 
     const cadastrarCategoria = (e) => {
@@ -69,6 +73,7 @@ const CadastroProduto = () => {
     }
 
     const mostrarProdutos = () => {
+
         setShowListaProdutos(true)
 
     }
