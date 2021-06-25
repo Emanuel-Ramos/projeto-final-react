@@ -6,3 +6,11 @@ div.pagina-produtos {
     background-position: center;
     color: whitesmoke;
 }
+
+.card {
+    max-width: 400px;
+}
+
+img {
+    max-width: 100%;
+}
