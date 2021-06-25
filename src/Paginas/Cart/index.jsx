@@ -19,11 +19,11 @@ const Cart = ({ produtos, excluirProduto }) => {
                 quantidade: element.quantidade,
                 codigo: element.codigo
             })
-        });
-        http.post('carrinho/finalizar', pedido)
+        })
+        http.post('cart/finalizar', pedido)
             .then(response => {
-                console.log(response.data);
-                history.push('/finalizar/' + response.data.numeroPedido)
+                console.log(response.data)
+             //   history.push('/finalizar/' + response.data.numeroPedido)
             })
     }
     return (
@@ -44,10 +44,10 @@ const Cart = ({ produtos, excluirProduto }) => {
                         </thead>
                         <tbody>
                             
-                            {produtos.map((item, indice) => <tr key={item.id}>
+                            {produtos.map((item, indice) => <tr key={indice}>
                                 <td>{item.nome}</td>
 
-                                <td  className="preco">R${item.preco.toFixed(2)}</td>
+                                <td  className="preco">R${item.preco}</td>
                                 <td><input value={item.quantidade} className="inputCarrinho" type="number" placeholder="1-100" onChange={(evento) => {
                                     item.quantidade = evento.target.value
                                 }}></input></td>
