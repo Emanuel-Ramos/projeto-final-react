@@ -9,18 +9,18 @@ const Cart = ({ produtos, excluirProduto }) => {
 
     const criarPedido = () => {
         const pedido = {
-            email: localStorage.getItem('email'),
-            itens: [
+            user: localStorage.getItem('user'),
+            produtos: [
 
             ]
         }
         produtos.forEach(element => {
-            pedido.itens.push({
+            pedido.produtos.push({
                 quantidade: element.quantidade,
-                codigoProduto: element.codigo
+                codigo: element.codigo
             })
         });
-        http.post('pedido', pedido)
+        http.post('carrinho/finalizar', pedido)
             .then(response => {
                 console.log(response.data);
                 history.push('/finalizar/' + response.data.numeroPedido)
