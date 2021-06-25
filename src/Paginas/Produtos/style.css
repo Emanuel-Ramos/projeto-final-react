@@ -7,10 +7,24 @@ div.pagina-produtos {
     color: whitesmoke;
 }
 
-.card {
-    max-width: 400px;
+
+.cards-area {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 80px;
+    flex-flow: row wrap;
 }
 
-img {
-    max-width: 100%;
+div.card {
+    min-width: 300px;
+    margin: 10px;
+    max-width: 300px;
+}
+
+
+.img-card {
+    min-width: 300px;
+    max-width: 300px;
 }
