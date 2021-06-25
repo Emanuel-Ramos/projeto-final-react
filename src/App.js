@@ -15,6 +15,7 @@ import Produto from './Paginas/Produto';
 import CadastroProduto from './Paginas/CadastroProdutos';
 import EditarProduto from './Paginas/EditarProduto';
 import Footer from './Components/Footer';
+import EditarCategoria from './Paginas/EditarCategorias';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/produto/:id" component={Produto} />
         <Route path="/cadastroProduto" component={CadastroProduto} />
         <Route path="/editarProduto/:id" component={EditarProduto} />
+        <Route path="/editarCategoria/:id" component={EditarCategoria} />
         <Route path="/pedidos/:id" component={PedidosUser} />
         <Route path="/pedidos" component={PedidosAll} />
         <Route path="/cart" component={Cart} />

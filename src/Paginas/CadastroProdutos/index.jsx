@@ -3,8 +3,9 @@ import './styles.css'
 import http from "../../http"
 import React, { Component } from 'react'
 import Select from 'react-select'
-import { Link } from "react-router-dom"
 import ListaProdutos from "../../Components/ListaProdutos"
+import { useLocation } from 'react-router-dom';
+import ListaCategorias from '../../Components/ListaCategorias'
 
 const CadastroProduto = () => {
     const [codigoProduto, setCodigoProduto] = useState('')
@@ -19,7 +20,10 @@ const CadastroProduto = () => {
     const [codigoCategoria, setCodigoCategoria] = useState('')
     const [descricaoCategoria, setDescricaoCategoria] = useState('')
     const [showListaProdutos, setShowListaProdutos] = useState(false)
+    const [showListaCategorias, setShowListaCategoria] = useState(false)
     const [produtos, setProdutos] = useState([])
+    const [url, setUrl] = useState('')
+    const location = useLocation();
     const options = categorias.map((item) => {
         return {
             key: item.id,
@@ -31,7 +35,7 @@ const CadastroProduto = () => {
     useEffect(() => {
         http.get('categoria').then(response => setCategorias(response.data))
         http.get('produto').then((response) => { setProdutos(response.data) }).catch(erro => console.log(erro))
-    }, [])
+    }, [location])
 
     const cadastrarProduto = (e) => {
         e.preventDefault()
@@ -42,10 +46,11 @@ const CadastroProduto = () => {
             imagem: arquivo,
             nome: nomeProduto,
             preco: preco,
+            url: url,
             categoria_id: categoriaProduto.key
         }
-        console.log(newProduto)
         http.post('produto', newProduto).then(console.log("Produto cadastrado")).catch(erro => console.log(erro))
+        window.location.reload();
     }
 
     const cadastrarCategoria = (e) => {
@@ -64,8 +69,19 @@ const CadastroProduto = () => {
         const arquivo = arquivos[0];
         reader.readAsDataURL(arquivo);
         reader.onload = () => {
-            setArquivo(reader.result);
+            setUrl(reader.result);
         };
+    }
+
+    const mostrarCategorias = (e) => {
+        e.preventDefault()
+        setShowListaCategoria(true)
+
+    }
+
+    const ocultarCategorias = () => {
+        setShowListaCategoria(false)
+
     }
 
     const mostrarProdutos = () => {
@@ -96,6 +112,10 @@ const CadastroProduto = () => {
                         <input value={descricaoCategoria} onChange={(e) => setDescricaoCategoria(e.target.value)} />
                     </label>
                     <button type="submit"> Cadastrar categoria</button>
+                    <button onClick={mostrarCategorias}>
+                        Mostrar categorias
+                    </button>
+                    <ListaCategorias categorias={categorias} show={showListaCategorias} hide={ocultarCategorias} />
                 </form>
             </div>
             <div className="cadastro-produto" >

@@ -4,6 +4,7 @@ import http from "../../http"
 import { Link } from "react-router-dom";
 import './styles.css'
 import Select from 'react-select'
+import { useHistory } from 'react-router-dom'
 
 const EditarProduto = () => {
     const { id } = useParams()
@@ -17,6 +18,8 @@ const EditarProduto = () => {
     const [arquivo, setArquivo] = useState('')
     const [categorias, setCategorias] = useState([])
     const reader = new FileReader();
+    const history = useHistory()
+
 
     const options = categorias.map((item) => {
         return {
@@ -56,8 +59,13 @@ const EditarProduto = () => {
 
 
     }, [id])
+    function excluirProduto() {
+        http.delete('produto/' + id).then(console.log("Produto deletado")).catch(erro => console.log(erro))
+        history.push('/cadastroProduto')
+    }
 
     return (
+
         <div className="produto-area">
             <form onSubmit={editarProduto} className="form-categoria">
                 <label>
@@ -102,6 +110,7 @@ const EditarProduto = () => {
                     Voltar para cadastro produtos
                 </button>
             </Link>
+            <button onClick={excluirProduto}>Apagar produto</button>
         </div>
     )
 }
