@@ -9,9 +9,10 @@ header {
     position: fixed;
     width: 100%;
     color: whitesmoke;
+    z-index: 1;
 }
 
-nav {
+header nav {
 
     min-width: 400px;
     width: calc(65% + 200px);
@@ -22,7 +23,7 @@ nav {
     justify-content: space-between;
 }
 
-ul {
+header nav ul {
     display: flex;
     width: 450px;
 
@@ -30,7 +31,7 @@ ul {
     justify-content: space-between;
 }
 
-a {
+header nav ul li a {
     text-decoration: none;
     color: whitesmoke;
 }

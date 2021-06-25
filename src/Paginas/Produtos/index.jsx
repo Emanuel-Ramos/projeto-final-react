@@ -51,7 +51,6 @@ const Produtos = () => {
         <div className="cardsArea">
             {produtos.map((item) =>
                 <ProdutoCard key={item.id} id={item.id} nome={item.nome} preco={item.preco} img={item.img} />
-
             )}
         </div>
     )

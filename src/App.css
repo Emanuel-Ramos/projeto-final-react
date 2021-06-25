@@ -8,6 +8,17 @@
 }
 
 
-img {
-    max-width: 200px;
+body {
+    background-color: rgb(30, 30, 40);
+}
+
+.container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+section {
+    padding-top: 80px;
+    width: 80%;
+    margin: auto;
 }

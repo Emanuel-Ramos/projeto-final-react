@@ -3,8 +3,17 @@ footer {
     color: whitesmoke;
 }
 
-nav {
+.component-footer {
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    
+    flex-direction: column;
+}
 
+/* nav {
     min-width: 400px;
     width: calc(65% + 200px);
     max-width: 100%;
@@ -12,7 +21,7 @@ nav {
     margin: auto;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 dl {
     display: flex;

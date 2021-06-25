@@ -14,6 +14,7 @@ import NavBar from './Components/NavBar';
 import Produto from './Paginas/Produto';
 import CadastroProduto from './Paginas/CadastroProdutos';
 import EditarProduto from './Paginas/EditarProduto';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/cart" component={Cart} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
