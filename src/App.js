@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Paginas/Home';
@@ -19,6 +19,26 @@ import EditarCategoria from './Paginas/EditarCategorias';
 
 
 function App() {
+
+  const [carrinho, setCarrinho] = useState([]) 
+
+  const adicionaProduto = (produto) => {
+    if(!carrinho.includes(produto)){
+    setCarrinho([
+      ...carrinho,
+      produto
+    ])
+  }
+    console.log(carrinho);
+  }
+
+  const excluir = (indice) => {
+    carrinho.splice(indice, 1)
+    setCarrinho([
+      ...carrinho
+    ])
+  }
+
   return (
     <Router>
       <NavBar />
@@ -28,13 +48,17 @@ function App() {
         <Route path="/signin" component={SignIn} />
         <Route path="/profile" component={Profile} />
         <Route path="/produtos" component={Produtos} />
-        <Route path="/produto/:id" component={Produto} />
+        <Route path="/produto/:id">
+          <Produto adicionaProduto={adicionaProduto} component={Produto} />
+        </Route>
         <Route path="/cadastroProduto" component={CadastroProduto} />
         <Route path="/editarProduto/:id" component={EditarProduto} />
         <Route path="/editarCategoria/:id" component={EditarCategoria} />
         <Route path="/pedidos/:id" component={PedidosUser} />
         <Route path="/pedidos" component={PedidosAll} />
-        <Route path="/cart" component={Cart} />
+        <Route path="/cart">
+          <Cart produtos={carrinho} excluirProduto={excluir}/>
+        </Route>
         <Route component={NotFound} />
       </Switch>
       <Footer />
