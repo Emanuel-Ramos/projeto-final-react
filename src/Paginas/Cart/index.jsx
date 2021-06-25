@@ -9,21 +9,21 @@ const Cart = ({ produtos, excluirProduto }) => {
 
     const criarPedido = () => {
         const pedido = {
-            email: localStorage.getItem('email'),
-            itens: [
+            user: localStorage.getItem('user'),
+            produtos: [
 
             ]
         }
         produtos.forEach(element => {
-            pedido.itens.push({
+            pedido.produtos.push({
                 quantidade: element.quantidade,
-                codigoProduto: element.codigo
+                codigo: element.codigo
             })
-        });
-        http.post('pedido', pedido)
+        })
+        http.post('cart/finalizar', pedido)
             .then(response => {
-                console.log(response.data);
-                history.push('/finalizar/' + response.data.numeroPedido)
+                console.log(response.data)
+             //   history.push('/finalizar/' + response.data.numeroPedido)
             })
     }
     return (
@@ -44,10 +44,10 @@ const Cart = ({ produtos, excluirProduto }) => {
                         </thead>
                         <tbody>
                             
-                            {produtos.map((item, indice) => <tr key={item.id}>
+                            {produtos.map((item, indice) => <tr key={indice}>
                                 <td>{item.nome}</td>
 
-                                <td  className="preco">R${item.preco.toFixed(2)}</td>
+                                <td  className="preco">R${item.preco}</td>
                                 <td><input value={item.quantidade} className="inputCarrinho" type="number" placeholder="1-100" onChange={(evento) => {
                                     item.quantidade = evento.target.value
                                 }}></input></td>
