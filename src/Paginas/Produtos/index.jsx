@@ -17,7 +17,7 @@ const Produtos = () => {
             <div className="container">
                 <div className="cardsArea">
                     {produtos.map((item) =>
-                        <ProdutoCard key={item.id} id={item.id} nome={item.nome} preco={item.preco} img={item.img} />
+                        <ProdutoCard key={item.id} id={item.id} nome={item.nome} preco={item.preco} img={item.url} />
                     )}
                     <p>daniel</p>
                 </div>
