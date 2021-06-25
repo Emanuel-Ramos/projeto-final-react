@@ -95,74 +95,82 @@ const CadastroProduto = () => {
     }
 
     return (
-        <div className="cadastro-area">
-            <div>
-                <form onSubmit={cadastrarCategoria} className="form-categoria">
-                    <h1>Cadastro de categoria</h1>
-                    <label>
-                        Nome
-                        <input value={nomeCategoria} onChange={(e) => setNomeCategoria(e.target.value)} />
-                    </label>
-                    <label>
-                        Codigo
-                        <input value={codigoCategoria} onChange={(e) => setCodigoCategoria(e.target.value)} />
-                    </label>
-                    <label>
-                        Descricao
-                        <input value={descricaoCategoria} onChange={(e) => setDescricaoCategoria(e.target.value)} />
-                    </label>
-                    <button type="submit"> Cadastrar categoria</button>
-                    <button onClick={mostrarCategorias}>
-                        Mostrar categorias
-                    </button>
-                    <ListaCategorias categorias={categorias} show={showListaCategorias} hide={ocultarCategorias} />
-                </form>
-            </div>
-            <div className="cadastro-produto" >
-                <form onSubmit={cadastrarProduto} className="form-categoria">
-                    <label>
-                        Codigo
-                        <input type="text" value={codigoProduto} onChange={(e) => setCodigoProduto(e.target.value)} />
-                    </label>
-                    <label>
-                        Descricao
-                        <input type="text" value={descricaoProduto} onChange={(e) => setDescricaoProduto(e.target.value)} />
-                    </label>
-                    <label>
-                        Estoque
-                        <input type="number" min="0" max="255" step="1" value={quantidadeEstoque} onChange={(e) => setEstoque(Number(e.target.value))} />
-                    </label>
-                    <label>
-                        Imagem
-                        <input type="file" onChange={manipuladorArquivo} className="form-control-file" />
-                    </label>
-                    <label>
-                        Nome
-                        <input type="text" value={nomeProduto} onChange={(e) => setNomeProduto(e.target.value)} />
-                    </label>
-                    <label>
-                        Preco
-                        <input type="text" value={preco} onChange={(e) => setPreco(e.target.value)} />
-                    </label>
-                    <label>
-                        Categoria
-                        <Select
-                            defaultValue="nenhum"
-                            name="colors"
-                            options={options}
-                            className="basic-multi-select"
-                            classNamePrefix="select"
-                            onChange={setCategoriaProduto}
-                        />
-                    </label>
-                    <button type="submit">Cadastrar Produto</button>
-                </form>
-                <button onClick={mostrarProdutos}>
-                    Mostrar produtos
-                </button>
-                <ListaProdutos produtos={produtos} show={showListaProdutos} hide={ocultarProdutos} />
+        <div className="pagina-cadastro-produtos">
+            <div className="container">
+
+                <div className="cadastro-area">
+                    <div>
+                        <form onSubmit={cadastrarCategoria} className="form-categoria">
+                            <h1>Cadastro de categoria</h1>
+                            <label>
+                                Nome
+                                <input value={nomeCategoria} onChange={(e) => setNomeCategoria(e.target.value)} />
+                            </label>
+                            <label>
+                                Codigo
+                                <input value={codigoCategoria} onChange={(e) => setCodigoCategoria(e.target.value)} />
+                            </label>
+                            <label>
+                                Descricao
+                                <input value={descricaoCategoria} onChange={(e) => setDescricaoCategoria(e.target.value)} />
+                            </label>
+                            <button type="submit"> Cadastrar categoria</button>
+                            <button onClick={mostrarCategorias}>
+                                Mostrar categorias
+                            </button>
+                            <ListaCategorias categorias={categorias} show={showListaCategorias} hide={ocultarCategorias} />
+                        </form>
+                    </div>
+                    <div className="cadastro-produto" >
+                        <form onSubmit={cadastrarProduto} className="form-categoria">
+                            <label>
+                                Codigo
+                                <input type="text" value={codigoProduto} onChange={(e) => setCodigoProduto(e.target.value)} />
+                            </label>
+                            <label>
+                                Descricao
+                                <input type="text" value={descricaoProduto} onChange={(e) => setDescricaoProduto(e.target.value)} />
+                            </label>
+                            <label>
+                                Estoque
+                                <input type="number" min="0" max="255" step="1" value={quantidadeEstoque} onChange={(e) => setEstoque(Number(e.target.value))} />
+                            </label>
+                            <label>
+                                Imagem
+                                <input type="file" onChange={manipuladorArquivo} className="form-control-file" />
+                            </label>
+                            <label>
+                                Nome
+                                <input type="text" value={nomeProduto} onChange={(e) => setNomeProduto(e.target.value)} />
+                            </label>
+                            <label>
+                                Preco
+                                <input type="text" value={preco} onChange={(e) => setPreco(e.target.value)} />
+                            </label>
+                            <label>
+                                Categoria
+                                <Select
+                                    defaultValue="nenhum"
+                                    name="colors"
+                                    options={options}
+                                    className="basic-multi-select"
+                                    classNamePrefix="select"
+                                    onChange={setCategoriaProduto}
+                                />
+                            </label>
+                            <button type="submit">Cadastrar Produto</button>
+                        </form>
+                        <button onClick={mostrarProdutos}>
+                            Mostrar produtos
+                        </button>
+                        <ListaProdutos produtos={produtos} show={showListaProdutos} hide={ocultarProdutos} />
+                    </div>
+                </div>
+
+
             </div>
         </div>
+
     )
 }
 

@@ -1,0 +1,8 @@
+div.pagina-produtos {
+    background-image: url(../../assets/img/fundo-produtos.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: whitesmoke;
+}
