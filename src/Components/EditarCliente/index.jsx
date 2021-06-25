@@ -41,16 +41,16 @@ const EditarCliente = (props) => {
     if (props.edit) {
         return (
             <div>
-                {/* <form onSubmit={salvar}>
+                <form onSubmit={salvar}>
                     <input defaultValue={props.data.nome} onChange={(e) => setNome(e.target.value)} />
                     <button type="submit">Salvar</button>
-                </form> */}
+                </form>
             </div>
         )
     } else {
         return (
             <div>
-                {/* <a>{props.data}</a> */}
+                <a>{props.data.nome}</a>
             </div>
         )
     }
