@@ -6,7 +6,7 @@ import EditarCliente from '../../Components/EditarCliente'
 
 const Profile = () => {
 
-    let [user, setUser] = useState({})
+    let [user, setUser] = useState({ endereco: {} })
     let [edit, setEdit] = useState(false)
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const Profile = () => {
 
     const salvar = (alteracao) => {
         console.log(alteracao)
-        http.put('cliente/' + alteracao).then(e => setUser(e.data))
+        http.put('cliente/' + user, alteracao).then(e => setUser(e.data))
         setEdit(false)
     }
 
