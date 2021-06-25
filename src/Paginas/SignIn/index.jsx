@@ -60,72 +60,81 @@ const SignIn = () => {
 
 
     return (
-        <div>
-            <h1>Registro de usuario</h1>
-            <form onSubmit={efetuarCadastro} className='form-registro'>
-                <div>
-                    <label>Nome</label>
-                    <input value={nome} onChange={(evento) => { setNome(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input value={email} onChange={(evento) => { setEmail(evento.target.value) }} type="email" required />
-                </div>
-                <div>
-                    <label>Senha</label>
-                    <input defaultValue={senha} onBlur={manipuladorSenha} type="password" required />
-                </div>
-                <div>
-                    <label>Confirmar Senha</label>
-                    <input defaultValue={senhaConfirma} onBlur={manipuladorSenhaConfirma} type="password" required />
-                </div>
-                <div>
-                    <label>CPF</label>
-                    <input value={cpf} onChange={(evento) => { setCpf(evento.target.value) }} type="number" required />
-                </div>
-                <div>
-                    <label>Username</label>
-                    <input value={userNameCliente} onChange={(evento) => { setUserNameCliente(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>Telefone</label>
-                    <input value={telefone} onChange={(evento) => { setTelefone(evento.target.value) }} type="number" required />
-                </div>
-                <div>
-                    <label>Data de nascimento</label>
-                    <input value={dataNascimento} onChange={(evento) => { setDataNascimento(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>CEP</label>
-                    <input value={cep} onChange={(evento) => { setCep(evento.target.value) }} type="number" required pattern="\d{5}-\d{3}" />
-                </div>
-                <div>
-                    <label>Rua</label>
-                    <input value={rua} onChange={(evento) => { setRua(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>Numero</label>
-                    <input value={numero} onChange={(evento) => { setNumero(evento.target.value) }} type="number" required />
-                </div>
-                <div>
-                    <label>Bairro</label>
-                    <input value={bairro} onChange={(evento) => { setBairro(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>Cidade</label>
-                    <input value={cidade} onChange={(evento) => { setCidade(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>UF</label>
-                    <input value={uf} onChange={(evento) => { setUf(evento.target.value) }} type="text" required />
-                </div>
-                <div>
-                    <label>Complemento</label>
-                    <input value={complemento} onChange={(evento) => { setComplemento(evento.target.value) }} type="text" required />
-                </div>
-                <button>Registrar</button>
-            </form>
+        <div className="pagina-cadastro">
+            <div className="container">
+                <section className="form-cadastro">
+                    <h1>Registro de usuario</h1>
+                    <form onSubmit={efetuarCadastro} className='form-registro'>
+                        <div className="input-area">
+                            <label>Nome</label>
+                            <input value={nome} onChange={(evento) => { setNome(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Email</label>
+                            <input value={email} onChange={(evento) => { setEmail(evento.target.value) }} type="email" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Senha</label>
+                            <input defaultValue={senha} onBlur={manipuladorSenha} type="password" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Confirmar Senha</label>
+                            <input defaultValue={senhaConfirma} onBlur={manipuladorSenhaConfirma} type="password" required />
+                        </div>
+                        <div className="input-area">
+                            <label>CPF</label>
+                            <input value={cpf} onChange={(evento) => { setCpf(evento.target.value) }} type="number" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Username</label>
+                            <input value={userNameCliente} onChange={(evento) => { setUserNameCliente(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Telefone</label>
+                            <input value={telefone} onChange={(evento) => { setTelefone(evento.target.value) }} type="number" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Data de nascimento</label>
+                            <input value={dataNascimento} onChange={(evento) => { setDataNascimento(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>CEP</label>
+                            <input value={cep} onChange={(evento) => { setCep(evento.target.value) }} type="number" required pattern="\d{5}-\d{3}" />
+                        </div>
+                        <div className="input-area">
+                            <label>Rua</label>
+                            <input value={rua} onChange={(evento) => { setRua(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Numero</label>
+                            <input value={numero} onChange={(evento) => { setNumero(evento.target.value) }} type="number" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Bairro</label>
+                            <input value={bairro} onChange={(evento) => { setBairro(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Cidade</label>
+                            <input value={cidade} onChange={(evento) => { setCidade(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>UF</label>
+                            <input value={uf} onChange={(evento) => { setUf(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="input-area">
+                            <label>Complemento</label>
+                            <input value={complemento} onChange={(evento) => { setComplemento(evento.target.value) }} type="text" required />
+                        </div>
+                        <div className="btn-area">
+                        <button className="btn-registro">Registrar</button>
+
+                        </div>
+                    
+                    </form>
+                </section>
+            </div>
         </div>
+
     )
 }
 
