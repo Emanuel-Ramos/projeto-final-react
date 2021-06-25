@@ -1,7 +1,10 @@
-.profileArea {
+.edit-area {
   padding-top: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+}
+
+.text-edit {
+  color: aliceblue;
 }
