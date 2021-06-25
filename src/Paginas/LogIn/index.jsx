@@ -16,6 +16,7 @@ const LogIn = () => {
         axios.post('http://localhost:8080/auth', usuario)
             .then(response => {
                 console.log(response.data)
+                localStorage.setItem('user', response.data.user)
                 localStorage.setItem('token', response.data.token)
             })
         console.log('Formulario foi submetido');
