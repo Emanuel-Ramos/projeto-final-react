@@ -97,23 +97,28 @@ const CadastroProduto = () => {
     return (
         <div className="pagina-cadastro-produtos">
             <div className="container">
-
-                <div className="cadastro-area">
-                    <div>
+                <section className="form-cadastro">
+                    <div className="area-form">
                         <form onSubmit={cadastrarCategoria} className="form-categoria">
-                            <h1>Cadastro de categoria</h1>
-                            <label>
-                                Nome
+                            <h3>Cadastro de categoria</h3>
+                            <div className="input-area">
+                                <label>Nome</label>
                                 <input value={nomeCategoria} onChange={(e) => setNomeCategoria(e.target.value)} />
-                            </label>
-                            <label>
-                                Codigo
+                            </div>
+
+                            <div className="input-area">
+
+                                <label>Codigo</label>
                                 <input value={codigoCategoria} onChange={(e) => setCodigoCategoria(e.target.value)} />
-                            </label>
-                            <label>
-                                Descricao
+
+                            </div>
+
+                            <div className="input-area">
+                                <label>Descricao</label>
                                 <input value={descricaoCategoria} onChange={(e) => setDescricaoCategoria(e.target.value)} />
-                            </label>
+
+                            </div>
+
                             <button type="submit"> Cadastrar categoria</button>
                             <button onClick={mostrarCategorias}>
                                 Mostrar categorias
@@ -121,34 +126,41 @@ const CadastroProduto = () => {
                             <ListaCategorias categorias={categorias} show={showListaCategorias} hide={ocultarCategorias} />
                         </form>
                     </div>
-                    <div className="cadastro-produto" >
+                    <div className="area-form">
                         <form onSubmit={cadastrarProduto} className="form-categoria">
-                            <label>
-                                Codigo
+                            <h3>Cadastro de Produto</h3>
+                            <div className="input-area">
+                                <label>Codigo</label>
                                 <input type="text" value={codigoProduto} onChange={(e) => setCodigoProduto(e.target.value)} />
-                            </label>
-                            <label>
-                                Descricao
+                            </div>
+
+                            <div className="input-area">
+                                <label>Descricao</label>
                                 <input type="text" value={descricaoProduto} onChange={(e) => setDescricaoProduto(e.target.value)} />
-                            </label>
-                            <label>
-                                Estoque
+                            </div>
+
+                            <div className="input-area">
+                                <label>Estoque</label>
                                 <input type="number" min="0" max="255" step="1" value={quantidadeEstoque} onChange={(e) => setEstoque(Number(e.target.value))} />
-                            </label>
-                            <label>
-                                Imagem
+                            </div>
+
+                            <div className="input-area">
+                                <label>Imagem</label>
                                 <input type="file" onChange={manipuladorArquivo} className="form-control-file" />
-                            </label>
-                            <label>
-                                Nome
+                            </div>
+
+                            <div className="input-area">
+                                <label>Nome</label>
                                 <input type="text" value={nomeProduto} onChange={(e) => setNomeProduto(e.target.value)} />
-                            </label>
-                            <label>
-                                Preco
+                            </div>
+
+                            <div className="input-area">
+                                <label>Preco</label>
                                 <input type="text" value={preco} onChange={(e) => setPreco(e.target.value)} />
-                            </label>
-                            <label>
-                                Categoria
+                            </div>
+
+                            <div className="input-area">
+                                <label>Categoria</label>
                                 <Select
                                     defaultValue="nenhum"
                                     name="colors"
@@ -157,7 +169,7 @@ const CadastroProduto = () => {
                                     classNamePrefix="select"
                                     onChange={setCategoriaProduto}
                                 />
-                            </label>
+                            </div>
                             <button type="submit">Cadastrar Produto</button>
                         </form>
                         <button onClick={mostrarProdutos}>
@@ -165,9 +177,7 @@ const CadastroProduto = () => {
                         </button>
                         <ListaProdutos produtos={produtos} show={showListaProdutos} hide={ocultarProdutos} />
                     </div>
-                </div>
-
-
+                </section>
             </div>
         </div>
 
