@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import axios from "axios";
+import MostrarStatus from '../../Components/MostrarStatus';
+import { useHistory } from "react-router-dom";
 
 const LogIn = () => {
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
-
+    const [loginStatus, setLoginStatus] = useState(false)
+    const history = useHistory();
     const efetuarLogin = (evento) => {
         evento.preventDefault()
         const usuario = {
@@ -18,6 +21,10 @@ const LogIn = () => {
                 console.log(response.data)
                 localStorage.setItem('user', response.data.user)
                 localStorage.setItem('token', response.data.token)
+                history.push("/produtos")
+            }).catch(erro => {
+                console.log(erro)
+                setLoginStatus(true)
             })
         console.log('Formulario foi submetido');
         setEmail('')
@@ -43,6 +50,7 @@ const LogIn = () => {
                 </div>
                 <button>Entrar</button>
             </form>
+            <MostrarStatus status={loginStatus} hide={() => setLoginStatus(false)} />
         </div>
 
     )

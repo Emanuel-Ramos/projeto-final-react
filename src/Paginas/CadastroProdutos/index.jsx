@@ -35,7 +35,7 @@ const CadastroProduto = () => {
     useEffect(() => {
         http.get('categoria').then(response => setCategorias(response.data))
         http.get('produto').then((response) => { setProdutos(response.data) }).catch(erro => console.log(erro))
-    }, [location])
+    }, [produtos.length || categorias.length])
 
     const cadastrarProduto = (e) => {
         e.preventDefault()

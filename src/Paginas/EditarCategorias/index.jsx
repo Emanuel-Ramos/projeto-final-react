@@ -29,7 +29,13 @@ const EditarCategoria = () => {
 
     useEffect(() => {
         http.get('categoria/' + id)
-            .then(response => setCategoria(response.data))
+            .then(response => {
+                setCategoria(response.data)
+                setNomeCategoria(response.data.nome)
+                setCodigoCategoria(response.data.codigo)
+                setDescricaoCategoria(response.data.descricao)
+
+            })
 
 
     }, [id])
