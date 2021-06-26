@@ -1,0 +1,11 @@
+.edit-area {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.text-edit {
+  color: aliceblue;
+}
