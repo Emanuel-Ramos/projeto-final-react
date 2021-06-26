@@ -2,33 +2,25 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import './styles.css'
 import http from "../../http"
-import EditarCliente from '../../Components/EditarCliente'
+import DadosCliente from '../../Components/DadosCliente'
 
 const Profile = () => {
 
     let [user, setUser] = useState({ endereco: {} })
-    let [edit, setEdit] = useState(false)
 
     useEffect(() => {
         let user = localStorage.getItem('user')
         http.get('cliente/' + user).then(e => setUser(e.data))
     }, [])
 
-    const editar = () => {
-        setEdit(true)
-    }
-
-    const salvar = (alteracao) => {
-        console.log(alteracao)
-        http.put('cliente/' + user, alteracao).then(e => setUser(e.data))
-        setEdit(false)
-    }
 
     return (
         <div className="profileArea">
             <div className="dados-usuario">
-                <EditarCliente edit={edit} data={user} salvarAlteracoes={salvar} />
-                <button onClick={editar}>Editar</button>
+                <DadosCliente data={user} />
+                <Link to={`editarPerfil/${user.usuario}`}>
+                    <button >Editar</button>
+                </Link>
             </div>
 
 

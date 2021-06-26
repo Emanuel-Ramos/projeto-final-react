@@ -4,7 +4,7 @@ import http from "../../http"
 import { Link } from "react-router-dom";
 import './styles.css'
 import Select from 'react-select'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 const EditarProduto = () => {
     const { id } = useParams()
@@ -19,7 +19,7 @@ const EditarProduto = () => {
     const [categorias, setCategorias] = useState([])
     const reader = new FileReader();
     const history = useHistory()
-
+    const location = useLocation();
 
     const options = categorias.map((item) => {
         return {
@@ -41,6 +41,7 @@ const EditarProduto = () => {
     const editarProduto = (e) => {
         e.preventDefault()
         const produtoEditado = {
+
             codigo: codigoProduto,
             descricao: descricaoProduto,
             estoque: quantidadeEstoque,
@@ -55,10 +56,19 @@ const EditarProduto = () => {
     useEffect(() => {
         http.get('categoria').then(response => setCategorias(response.data))
         http.get('produto/' + id)
-            .then(response => setProduto(response.data))
+            .then(response => {
+                setProduto(response.data)
+                setCodigoProduto(response.data.codigo)
+                setDescricaoProduto(response.data.descricao)
+                setEstoque(response.data.estoque)
+                setNomeProduto(response.data.nome)
+                setPreco(response.data.preco)
+                setArquivo(response.data.url)
+                setCategoriaProduto(response.data.categoria)
+            })
 
 
-    }, [id])
+    }, [location])
     function excluirProduto() {
         http.delete('produto/' + id).then(console.log("Produto deletado")).catch(erro => console.log(erro))
         history.push('/cadastroProduto')

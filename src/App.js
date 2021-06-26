@@ -16,19 +16,19 @@ import CadastroProduto from './Paginas/CadastroProdutos';
 import EditarProduto from './Paginas/EditarProduto';
 import Footer from './Components/Footer';
 import EditarCategoria from './Paginas/EditarCategorias';
-
+import EditarPerfil from "./Paginas/EditarPerfil";
 
 function App() {
 
-  const [carrinho, setCarrinho] = useState([]) 
+  const [carrinho, setCarrinho] = useState([])
 
   const adicionaProduto = (produto) => {
-    if(!carrinho.includes(produto)){
-    setCarrinho([
-      ...carrinho,
-      produto
-    ])
-  }
+    if (!carrinho.includes(produto)) {
+      setCarrinho([
+        ...carrinho,
+        produto
+      ])
+    }
     console.log(carrinho);
   }
 
@@ -53,11 +53,12 @@ function App() {
         </Route>
         <Route path="/cadastroProduto" component={CadastroProduto} />
         <Route path="/editarProduto/:id" component={EditarProduto} />
+        <Route path="/editarPerfil/:usuario" component={EditarPerfil} />
         <Route path="/editarCategoria/:id" component={EditarCategoria} />
         <Route path="/pedidos/:id" component={PedidosUser} />
         <Route path="/pedidos" component={PedidosAll} />
         <Route path="/cart">
-          <Cart produtos={carrinho} excluirProduto={excluir}/>
+          <Cart produtos={carrinho} excluirProduto={excluir} />
         </Route>
         <Route component={NotFound} />
       </Switch>
