@@ -12,18 +12,31 @@ const Produtos = () => {
 
     }, [])
 
-    return (
-        <div className="pagina-produtos">
-            <div className="container">
-                <div className="cards-area">
-                    {produtos.map((item) =>
-                        <ProdutoCard key={item.id} id={item.id} nome={item.nome} preco={item.preco} img={item.url} />
-                    )}
+    if (produtos.length == 0) {
+        return (
+            <div className="pagina-produtos">
+                <div className="container">
+                    <div className="empty-page">
+                        <h1>Nao temos nada por aqui ainda</h1>
+                        <h1>Efetue o Login, va para a pagina perfil e cadastre novos produtos!</h1>
+                    </div>
                 </div>
             </div>
-        </div>
+        )
+    } else {
+        return (
+            <div className="pagina-produtos">
+                <div className="container">
+                    <div className="cards-area">
+                        {produtos.map((item) =>
+                            <ProdutoCard key={item.id} id={item.id} nome={item.nome} preco={item.preco} img={item.url} />
+                        )}
+                    </div>
+                </div>
+            </div>
 
-    )
+        )
+    }
 }
 
 export default Produtos

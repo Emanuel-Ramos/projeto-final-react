@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .text-edit {
@@ -11,4 +12,18 @@
 
 .basic-multi-select {
   color: black;
+}
+
+.produto-area {
+  height: 10rem;
+  flex-grow: 1;
+}
+
+.form-categoria {
+  display: flex;
+  flex-direction: column;
+}
+
+.basic-multi-select {
+  width: 200px;
 }

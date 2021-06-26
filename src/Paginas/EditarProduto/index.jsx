@@ -51,6 +51,7 @@ const EditarProduto = () => {
             categoria_id: categoriaProduto.key
         }
         http.put('produto/' + id, produtoEditado).then(console.log("Produto editado")).catch(erro => console.log(erro))
+        history.push('/cadastroProduto')
     }
 
     useEffect(() => {
@@ -69,6 +70,7 @@ const EditarProduto = () => {
 
 
     }, [location])
+
     function excluirProduto() {
         http.delete('produto/' + id).then(console.log("Produto deletado")).catch(erro => console.log(erro))
         history.push('/cadastroProduto')
@@ -113,7 +115,7 @@ const EditarProduto = () => {
                         onChange={setCategoriaProduto}
                     />
                 </label>
-                <button type="submit">Cadastrar Produto</button>
+                <button type="submit">Editar Produto</button>
             </form>
             <Link to={`/cadastroProduto`}>
                 <button>

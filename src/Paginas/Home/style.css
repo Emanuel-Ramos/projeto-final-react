@@ -1,19 +1,21 @@
 div.pagina-home {
-    background-image: url(../../assets/img/fundo-home.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    color: whitesmoke;
+  background-image: url(../../assets/img/fundo-home.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  flex-grow: 1;
 }
 
-div.pagina-home  h1, h2{
-    text-align: center;
-    margin-bottom: 30px;
+div.pagina-home h1,
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 div.pagina-home p {
-    text-align: justify;
-    text-indent: 50px;
-    padding-bottom: 30px;
+  text-align: justify;
+  text-indent: 50px;
+  padding-bottom: 30px;
 }

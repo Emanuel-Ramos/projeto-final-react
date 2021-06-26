@@ -39,6 +39,9 @@ const CadastroProduto = () => {
 
     const cadastrarProduto = (e) => {
         e.preventDefault()
+        if (categoriaProduto.key == undefined) {
+            return alert("Voce deve escolher uma categoria")
+        }
         let newProduto = {
             codigo: codigoProduto,
             descricao: descricaoProduto,

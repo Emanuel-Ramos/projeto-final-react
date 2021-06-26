@@ -3,30 +3,48 @@ import { useParams } from "react-router-dom"
 import http from "../../http"
 import { Link } from "react-router-dom";
 import './styles.css'
+import { useHistory } from "react-router";
 
 const Produto = ({ adicionaProduto }) => {
     const { id } = useParams()
     const [produto, setProduto] = useState({})
+    let [user, setUser] = useState({ endereco: {} })
+    const history = useHistory();
+
 
     useEffect(() => {
-        http.get('produto/' + id)
-            .then(response => setProduto(response.data))
+        let user = localStorage.getItem('user')
+        console.log(user)
+        if (user == null) {
+            history.push("/login")
+
+        } else {
+            http.get('cliente/' + user).then(e => setUser(e.data)).catch(erro => console.log(erro))
+            http.get('produto/' + id)
+                .then(response => setProduto(response.data))
+
+        }
+
 
     }, [id])
 
-    const adicionarProduto = () =>{
-    adicionaProduto(produto)    
+    const adicionarProduto = () => {
+
+        adicionaProduto(produto)
+
+
+
     }
 
     return (
         <div className="produto-area">
-            
+
             <div className="container">
                 <div className="row">
 
                     <div className=" col-12 col-lg-3">
-                    <h1>{produto.nome}</h1>
-                    <h4>{produto.descricao}</h4>
+                        <h1>{produto.nome}</h1>
+                        <h4>{produto.descricao}</h4>
                     </div>
 
                     <div className=" col-12 col-lg-6">
@@ -44,7 +62,7 @@ const Produto = ({ adicionaProduto }) => {
                     </div>
                 </div>
             </div>
-            <Link  to="/produtos" className="btn mt-3 block">🠔 Voltar para Produtos </Link>
+            <Link to="/produtos" className="btn mt-3 block">🠔 Voltar para Produtos </Link>
         </div>
     )
 }

@@ -5,12 +5,12 @@ div.pagina-cadastro-produtos {
   background-size: cover;
   background-position: center;
   color: whitesmoke;
+  flex-grow: 1;
 }
 
 .pagina-cadastro-produtos .form-cadastro {
   display: flex;
   flex-flow: row wrap;
-
 }
 
 .pagina-cadastro-produtos .area-form {

@@ -3,16 +3,30 @@ import { Link } from "react-router-dom"
 import './styles.css'
 import http from "../../http"
 import DadosCliente from '../../Components/DadosCliente'
+import { useHistory } from "react-router-dom";
 
 const Profile = () => {
 
     let [user, setUser] = useState({ endereco: {} })
+    const history = useHistory();
 
     useEffect(() => {
         let user = localStorage.getItem('user')
-        http.get('cliente/' + user).then(e => setUser(e.data))
+        console.log(user)
+        if (user == null) {
+            history.push("/login")
+
+        } else {
+            http.get('cliente/' + user).then(e => setUser(e.data)).catch(erro => console.log(erro))
+
+        }
     }, [])
 
+    const deslogar = () => {
+
+        localStorage.clear();
+        window.location.reload();
+    }
 
     return (
         <div className="profileArea">
@@ -29,6 +43,14 @@ const Profile = () => {
                     Cadastrar Produtos
                 </button>
             </Link>
+            <Link to={`pedidos`}>
+                <button>
+                    Ver pedidos
+                </button>
+            </Link>
+            <button onClick={deslogar}>
+                Deslogar
+            </button>
         </div>
     )
 }

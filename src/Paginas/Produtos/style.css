@@ -1,30 +1,37 @@
 div.pagina-produtos {
-    background-image: url(../../assets/img/fundo-produtos.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    color: whitesmoke;
+  background-image: url(../../assets/img/fundo-produtos.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  flex-grow: 1;
 }
 
-
 .cards-area {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 80px;
-    flex-flow: row wrap;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 80px;
+  flex-flow: row wrap;
 }
 
 div.card {
-    min-width: 300px;
-    margin: 10px;
-    max-width: 300px;
+  min-width: 300px;
+  margin: 10px;
+  max-width: 300px;
 }
 
-
 .img-card {
-    min-width: 300px;
-    max-width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.empty-page {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

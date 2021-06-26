@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from "axios";
 import MostrarStatus from '../../Components/MostrarStatus';
 import { useHistory } from "react-router-dom";
+import './styles.css'
 
 const LogIn = () => {
 
@@ -21,7 +22,7 @@ const LogIn = () => {
                 console.log(response.data)
                 localStorage.setItem('user', response.data.user)
                 localStorage.setItem('token', response.data.token)
-                history.push("/produtos")
+                window.location.reload();
             }).catch(erro => {
                 console.log(erro)
                 setLoginStatus(true)
@@ -30,6 +31,17 @@ const LogIn = () => {
         setEmail('')
         setSenha('')
     }
+
+    useEffect(() => {
+        let user = localStorage.getItem('user')
+        console.log(user)
+        if (user != null) {
+            history.push("/produtos")
+
+        }
+    }, [])
+
+
     const manipuladorEmail = (evento) => {
         setEmail(evento.target.value)
     }
@@ -37,7 +49,7 @@ const LogIn = () => {
         setSenha(evento.target.value)
     }
     return (
-        <div>
+        <div className="div-principal">
             <h1>Login</h1>
             <form onSubmit={efetuarLogin}>
                 <div>
@@ -50,6 +62,7 @@ const LogIn = () => {
                 </div>
                 <button>Entrar</button>
             </form>
+            <button onClick={() => history.push("/signin")}>Nao tem conta? Cadastre-se</button>
             <MostrarStatus status={loginStatus} hide={() => setLoginStatus(false)} />
         </div>
 
