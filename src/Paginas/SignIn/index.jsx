@@ -96,7 +96,7 @@ const SignIn = () => {
                         </div>
                         <div className="input-area">
                             <label>Data de nascimento</label>
-                            <input required placeholder="2001-01-01" value={dataNascimento} onChange={(evento) => { setDataNascimento(evento.target.value) }} type="text" required />
+                            <input required  value={dataNascimento} onChange={(evento) => { setDataNascimento(evento.target.value) }} type="date" required />
                         </div>
                         <div className="input-area">
                             <label>CEP</label>
