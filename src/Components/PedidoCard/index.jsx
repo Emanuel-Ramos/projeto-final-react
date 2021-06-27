@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
 import "../../Styles/global-styles.css"
+import http from "../../http"
 
 const PedidoCard = (props) => {
+
+
+    function excluirPedido() {
+        console.log(props);
+        http.delete('pedido-finalizado/' + props.id).then(console.log("Pedido deletado")).catch(erro => console.log(erro))
+        window.location.reload()
+
+    }
+
     return (
         <div className="card">            
             <div className="card-body">
@@ -13,9 +22,9 @@ const PedidoCard = (props) => {
                 )}
                 
             </div>
-            <Link to={`pedidos`}>
-                <button>Excluir</button>
-            </Link>
+            
+                <button onClick={excluirPedido}>Excluir</button>
+            
         </div>
     )
 }

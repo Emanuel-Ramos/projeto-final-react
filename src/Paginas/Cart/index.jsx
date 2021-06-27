@@ -23,8 +23,8 @@ const Cart = ({ produtos, excluirProduto }) => {
         })
         http.post('cart/finalizar', pedido)
             .then(response => {
-                console.log(response.data)
-                //   history.push('/finalizar/' + response.data.numeroPedido)
+                alert('Pedido finalizado com sucesso!')
+                history.push('/produtos')
             })
     }
 
