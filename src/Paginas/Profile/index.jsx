@@ -29,28 +29,36 @@ const Profile = () => {
     }
 
     return (
-        <div className="profileArea">
-            <div className="dados-usuario">
-                <DadosCliente data={user} />
-                <Link to={`editarPerfil/${user.usuario}`}>
-                    <button >Editar</button>
-                </Link>
+        <div className="pagina-profile">
+            <div className="container">
+                <section>
+
+                    <div className="dados-usuario">
+                        <DadosCliente data={user} />
+                        <Link to={`editarPerfil/${user.usuario}`}>
+                            <button >Editar</button>
+                        </Link>
+                    </div>
+
+
+                    <Link to={`cadastroProduto`}>
+                        <button>
+                            Cadastrar Produtos
+                        </button>
+                    </Link>
+                    <Link to={`pedidos`}>
+                        <button>
+                            Ver pedidos
+                        </button>
+                    </Link>
+                    <button onClick={deslogar}>
+                        Deslogar
+                    </button>
+
+                </section>
             </div>
 
 
-            <Link to={`cadastroProduto`}>
-                <button>
-                    Cadastrar Produtos
-                </button>
-            </Link>
-            <Link to={`pedidos`}>
-                <button>
-                    Ver pedidos
-                </button>
-            </Link>
-            <button onClick={deslogar}>
-                Deslogar
-            </button>
         </div>
     )
 }

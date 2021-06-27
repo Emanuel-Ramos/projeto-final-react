@@ -13,17 +13,6 @@
   margin: auto;
 }
 
-form {
-  min-width: 400px;
-  width: 95%;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 30px;
-  border-radius: 5px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin: 10px;
-}
 
 .input-area {
   min-width: 350px;

@@ -1,3 +1,10 @@
-.div-principal {
-  flex-grow: 1;
+div.pagina-carrinho {
+  background-image: url(../../assets/img/fundo-pedidos.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  min-height: 80vh;
+  height: auto;
 }

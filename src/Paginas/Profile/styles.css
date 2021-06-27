@@ -1,8 +1,11 @@
-.profileArea {
-  padding-top: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-grow: 1;
+div.pagina-profile {
+  background-image: url(../../assets/img/fundo-login.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  min-height: 80vh;
+  height: auto;
 }
+

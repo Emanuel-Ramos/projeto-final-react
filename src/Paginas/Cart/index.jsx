@@ -37,7 +37,7 @@ const Cart = ({ produtos, excluirProduto }) => {
     }, [])
 
     return (
-        <div className="div-principal">
+        <div className="pagina-carrinho">
             <div className="container">
                 <section>
                     <h1>Carrinho</h1>
