@@ -6,7 +6,6 @@ import LogIn from './Paginas/LogIn';
 import SignIn from './Paginas/SignIn';
 import Profile from './Paginas/Profile';
 import Produtos from './Paginas/Produtos';
-import PedidosUser from './Paginas/PedidosUser';
 import PedidosAll from './Paginas/PedidosAll';
 import Cart from './Paginas/Cart';
 import NotFound from './Paginas/NotFound';
@@ -55,7 +54,6 @@ function App() {
         <Route path="/editarProduto/:id" component={EditarProduto} />
         <Route path="/editarPerfil/:usuario" component={EditarPerfil} />
         <Route path="/editarCategoria/:id" component={EditarCategoria} />
-        <Route path="/pedidos/:id" component={PedidosUser} />
         <Route path="/pedidos" component={PedidosAll} />
         <Route path="/cart">
           <Cart produtos={carrinho} excluirProduto={excluir} />
