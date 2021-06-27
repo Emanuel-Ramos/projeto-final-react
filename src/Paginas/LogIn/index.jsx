@@ -49,21 +49,36 @@ const LogIn = () => {
         setSenha(evento.target.value)
     }
     return (
-        <div className="div-principal">
-            <h1>Login</h1>
-            <form onSubmit={efetuarLogin}>
-                <div>
-                    <label>Usuario</label>
-                    <input value={email} onChange={manipuladorEmail} type="text" required />
-                </div>
-                <div>
-                    <label>Senha</label>
-                    <input value={senha} onChange={manipuladorSenha} type="password" required />
-                </div>
-                <button>Entrar</button>
-            </form>
-            <button onClick={() => history.push("/signin")}>Nao tem conta? Cadastre-se</button>
-            <MostrarStatus status={loginStatus} hide={() => setLoginStatus(false)} />
+        <div className="pagina-login">
+            <div className="container">
+                <section>
+
+                    <form onSubmit={efetuarLogin}>
+                        <div className="bloco">
+                            <h3>Login</h3>
+                        </div>
+
+                        <div>
+                            <label>Usuario</label>
+                            <input value={email} onChange={manipuladorEmail} type="text" required />
+                        </div>
+                        <div>
+                            <label>Senha</label>
+                            <input value={senha} onChange={manipuladorSenha} type="password" required />
+                        </div>
+                        <button>Entrar</button>
+                        <div className="bloco">
+                        <button type="button" onClick={() => history.push("/signin")}>Nao tem conta? <u>Cadastre-se</u></button>
+                        </div>
+                        <div className="bloco">
+                        <MostrarStatus status={loginStatus} hide={() => setLoginStatus(false)} />
+                        </div>
+                      
+                    </form>
+
+                    
+                </section>
+            </div>
         </div>
 
     )

@@ -5,7 +5,8 @@ div.pagina-home {
   background-size: cover;
   background-position: center;
   color: whitesmoke;
-  flex-grow: 1;
+  min-height: 80vh;
+  height: auto;
 }
 
 div.pagina-home h1,
