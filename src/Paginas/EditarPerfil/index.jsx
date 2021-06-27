@@ -84,24 +84,51 @@ const EditarPerfil = () => {
                 <section>
                     <form onSubmit={salvar}>
                         
+                        <div className="input-area">
                         <label>Nome</label>
                         <input defaultValue={nome} onChange={(e) => setNome(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>Usuario</label>
                         <input defaultValue={userNameCliente} onChange={(e) => setUserNameCliente(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>Telefone</label>
                         <input defaultValue={telefone} onChange={(e) => setTelefone(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>Email</label>
                         <input defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>Data de Nascimento</label>
                         <input defaultValue={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>CPF</label>
                         <input defaultValue={cpf} onChange={(e) => setCpf(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>CEP</label>
                         <input defaultValue={cep} onChange={(e) => setCep(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>Numero</label>
                         <input defaultValue={numero} onChange={(e) => setNumero(e.target.value)} />
+                        </div>
+
+                        <div className="input-area">
                         <label>Complemento</label>
                         <input defaultValue={complemento} onChange={(e) => setComplemento(e.target.value)} />
+                        </div>
+
                         <button type="submit">Salvar</button>
                         <div className="bloco">
                     <button onClick={desligarPerfil}>Desligar perfil</button>
