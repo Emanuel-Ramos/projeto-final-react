@@ -23,7 +23,7 @@ const EditarProduto = () => {
 
     const options = categorias.map((item) => {
         return {
-            key: item.id,
+            id: item.id,
             value: item.nome,
             label: item.nome
         }
@@ -40,6 +40,7 @@ const EditarProduto = () => {
 
     const editarProduto = (e) => {
         e.preventDefault()
+        console.log(categoriaProduto)
         const produtoEditado = {
 
             codigo: codigoProduto,
@@ -48,7 +49,7 @@ const EditarProduto = () => {
             imagem: arquivo,
             nome: nomeProduto,
             preco: preco,
-            categoria_id: categoriaProduto.key
+            categoria: categoriaProduto.id
         }
         http.put('produto/' + id, produtoEditado).then(console.log("Produto editado")).catch(erro => console.log(erro))
         history.push('/cadastroProduto')
@@ -69,7 +70,7 @@ const EditarProduto = () => {
             })
 
 
-    }, [location])
+    }, [])
 
     function excluirProduto() {
         http.delete('produto/' + id).then(console.log("Produto deletado")).catch(erro => console.log(erro))
