@@ -70,7 +70,7 @@ const EditarProduto = () => {
             })
 
 
-    }, [])
+    }, [location])
 
     function excluirProduto() {
         http.delete('produto/' + id).then(console.log("Produto deletado")).catch(erro => console.log(erro))
