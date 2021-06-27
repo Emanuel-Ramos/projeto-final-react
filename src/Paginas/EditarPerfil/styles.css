@@ -1,11 +1,18 @@
-.edit-area {
+/* .edit-area {
   padding-top: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-}
+} */
 
-.text-edit {
-  color: aliceblue;
+div.pagina-editar-perfil {
+  background-image: url(../../assets/img/fundo-login.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  min-height: 80vh;
+  height: auto;
 }

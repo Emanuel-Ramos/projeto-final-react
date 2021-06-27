@@ -79,29 +79,38 @@ const EditarPerfil = () => {
 
     return (
 
-        <div className="edit-area">
-            <form onSubmit={salvar}>
-                <label>Nome</label>
-                <input defaultValue={nome} onChange={(e) => setNome(e.target.value)} />
-                <label>Usuario</label>
-                <input defaultValue={userNameCliente} onChange={(e) => setUserNameCliente(e.target.value)} />
-                <label>Telefone</label>
-                <input defaultValue={telefone} onChange={(e) => setTelefone(e.target.value)} />
-                <label>Email</label>
-                <input defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
-                <label>Data de Nascimento</label>
-                <input defaultValue={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
-                <label>CPF</label>
-                <input defaultValue={cpf} onChange={(e) => setCpf(e.target.value)} />
-                <label>CEP</label>
-                <input defaultValue={cep} onChange={(e) => setCep(e.target.value)} />
-                <label>Numero</label>
-                <input defaultValue={numero} onChange={(e) => setNumero(e.target.value)} />
-                <label>Complemento</label>
-                <input defaultValue={complemento} onChange={(e) => setComplemento(e.target.value)} />
-                <button type="submit">Salvar</button>
-            </form>
-            <button onClick={desligarPerfil}>Desligar perfil</button>
+        <div className="pagina-editar-perfil">
+            <div className="container">
+                <section>
+                    <form onSubmit={salvar}>
+                        
+                        <label>Nome</label>
+                        <input defaultValue={nome} onChange={(e) => setNome(e.target.value)} />
+                        <label>Usuario</label>
+                        <input defaultValue={userNameCliente} onChange={(e) => setUserNameCliente(e.target.value)} />
+                        <label>Telefone</label>
+                        <input defaultValue={telefone} onChange={(e) => setTelefone(e.target.value)} />
+                        <label>Email</label>
+                        <input defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
+                        <label>Data de Nascimento</label>
+                        <input defaultValue={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
+                        <label>CPF</label>
+                        <input defaultValue={cpf} onChange={(e) => setCpf(e.target.value)} />
+                        <label>CEP</label>
+                        <input defaultValue={cep} onChange={(e) => setCep(e.target.value)} />
+                        <label>Numero</label>
+                        <input defaultValue={numero} onChange={(e) => setNumero(e.target.value)} />
+                        <label>Complemento</label>
+                        <input defaultValue={complemento} onChange={(e) => setComplemento(e.target.value)} />
+                        <button type="submit">Salvar</button>
+                        <div className="bloco">
+                    <button onClick={desligarPerfil}>Desligar perfil</button>
+
+                        </div>
+                    </form>
+                </section>
+            </div>
+
         </div>
     )
 }
