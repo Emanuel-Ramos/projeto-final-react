@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Passo a passo
 1- Clonar repositorio do github
 2- Rodar terminal na pasta clonada "npm i"
 3- Baixar pasta da api
