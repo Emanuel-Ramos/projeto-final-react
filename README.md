@@ -1,12 +1,20 @@
 # Passo a passo
 1- Clonar repositorio do github
+
 2- Rodar terminal na pasta clonada "npm i"
+
 3- Baixar pasta da api
+
 4- importar com maven project no spring
+
 5- criar banco de dados
+
 6- Alterar configuracoes no application propriets no spring
+
 7- Rodar api
+
 8- Rodar o react app -> "npm start"
+
 9- No navegador, apague todos os dados do localStorage.
 
 Obs: Nao esta o codigo mais organizado e bonito visualmente, mas esta funcionando de acordo, e bem parecido com a vida real, deu muito trabalho e fizemos com muito carinho XD.
