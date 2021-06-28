@@ -1,71 +1,50 @@
 # Getting Started with Create React App
+1- Clonar repositorio do github
+2- Rodar terminal na pasta clonada "npm i"
+3- Baixar pasta da api
+4- importar com maven project no spring
+5- criar banco de dados
+6- Alterar configuracoes no application propriets no spring
+7- Rodar api
+8- Rodar o react app -> "npm start"
+9- No navegador, apague todos os dados do localStorage.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Obs: Nao esta o codigo mais organizado e bonito visualmente, mas esta funcionando de acordo, e bem parecido com a vida real, deu muito trabalho e fizemos com muito carinho XD.
 
-## Available Scripts
 
-In the project directory, you can run:
+---------Projeto final----------
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1- Um Cliente poderá se cadastrar livremente ---> Tela Login, cadastre-se.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2- Um Cliente poderá logar ---> Tela Login, usuario e senha.
 
-### `yarn test`
+3- Atualizar seus próprios dados pessoais, deletar sua própria conta. ---> Tela perfil, editar.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-------> O modelo de negocio foi pensado para que existisse o login de adm, onde as funcionalidades de cadastrar
+ produtos e categorias seriam mostradas na pagina perfil, e se nao fosse login de adm,elas nao apareceriam, mas nao foi possivel
+ainda, entao qualquer tipo de usuario logado tem as opcoes de ver todos os pedidos, cadastro de produtos e categorias pela pagina do perfil. <-----
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4- Categorias -> Pagina Perfil ---> Cadastrar Produtos.	
+	. Criar uma nova categoria.
+	. Ver todas categorias.
+	. Editar uma categoria.
+	. Deletar uma categoria.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5- Produtos -> Pagina Perfil ---> Cadastrar Produtos.		
+	. Criar um novo produto (Com imagem).
+	. Visualizar todos os produtos ou um específico pelo nome.
+	. Ver todas categorias.
+	. Deletar um produto.
+	. Editar um produto(Editar imagem do produto esta com um bug, depois de editar, de um refresh na pagina de cadastro produtos).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+6- Usuario pode ir na pagina de produtos, cliar em ver mais, e colocar no carrinho.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+7- Usuario no carrinho pode escolher a quantidade de cada produto e finalizar o pedido.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+8- Pedidos -> Pagina Perfil ---> Ver todos os pedidos.
+	. Visualizar todos os pedidos.
+	. Excluir algum pedido.
 # projeto-final-react
